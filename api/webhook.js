@@ -198,6 +198,9 @@ async function checkAllSubscriptions(userId) {
 //         );
 //     }
 // });
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
 // بدء الخادم
 const PORT = 3000;
 
