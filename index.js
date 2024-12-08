@@ -204,4 +204,11 @@ async function checkAllSubscriptions(userId) {
 const PORT = 3000;
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-module.exports = app;
+//module.exports = app;
+module.exports = (req, res) => {
+    if (req.method === 'POST') {
+        res.status(200).send('Webhook received!');
+    } else {
+        res.status(404).send('NOT_FOUND');
+    }
+};
