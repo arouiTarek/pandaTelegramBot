@@ -49,7 +49,11 @@ app.post(`/api/webhook/${TOKEN_users}`, async (req, res) => {
                         },
                     });
                 } else {
-                    bot_users.sendMessage(chatId, '✅ للمشاركة في المسابقة والفوز بحساب تمويل 5000$ عليك بتنفيذ الشروط :', {
+                    bot_users.sendMessage(chatId, `✅ للمشاركة في المسابقة والحصول على حساب تمويل بقيمة 5000 $
+عليك بالاشتراك في القنواة 
+سيتم تحديد 5 فائزين الاوائل
+شرط الاساسي هو وصول الى 10k مشترك 
+بالتوفيق للجميع : `, {
                         reply_markup: {
                             inline_keyboard: [
                                 ...CHANNELS.map((channel) => [{ text: `📢 ${channel}`, url: `https://t.me/${channel.replace('@', '')}` }]),
@@ -75,7 +79,11 @@ app.post(`/api/webhook/${TOKEN_users}`, async (req, res) => {
             const isSubscribedToAll = await checkAllSubscriptions(userId);
             if (isSubscribedToAll) {
                 await db.updateSubscription(userId);
-                bot_users.sendMessage(chatId, '✅ للمشاركة في المسابقة والفوز بحساب تمويل 5000$ عليك بتنفيذ الشروط :', {
+                bot_users.sendMessage(chatId, `✅ للمشاركة في المسابقة والحصول على حساب تمويل بقيمة 5000 $
+عليك بالاشتراك في القنواة 
+سيتم تحديد 5 فائزين الاوائل
+شرط الاساسي هو وصول الى 10k مشترك 
+بالتوفيق للجميع : `, {
                     reply_markup: {
                         inline_keyboard: [
                             [{ text: 'رابط دعوة', callback_data: 'link_invite' }],
