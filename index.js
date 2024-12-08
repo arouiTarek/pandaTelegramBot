@@ -12,7 +12,7 @@ const WEBHOOK_URL_LOCAL = 'https://610f-105-103-243-74.ngrok-free.app/api/webhoo
 const WEBHOOK_URL_SERVER = 'https://panda-telegram-bot.vercel.app/api/webhook'; // عدّل الرابط إلى رابط مشروعك
 //const WEBHOOK_URL_SERVER = 'http://localhost:3000/api/webhook'; // عدّل الرابط إلى رابط مشروعك
 const CHANNELS = ['@citationset', '@kilwa_trading', '@Pandadz'];
-
+https://t.me/TarekArouiBot
 
 bot_users.setWebHook(`${WEBHOOK_URL_SERVER}/${TOKEN_users}`);
 
@@ -87,7 +87,7 @@ app.post(`/api/webhook/${TOKEN_users}`, async (req, res) => {
                 bot_users.sendMessage(chatId, '❌ يرجى الاشتراك أولاً.');
             }
         } else if (data === 'link_invite') {
-            bot_users.sendMessage(chatId, `🔗 رابط الدعوة الخاص بك: \n https://t.me/TradePandadzbot?start=${userId}`);
+            bot_users.sendMessage(chatId, `🔗 رابط الدعوة الخاص بك: \n https://t.me/TarekArouiBot?start=${userId}`);
         } else if (data === 'user_info') {
             const user = await db.getUser(userId);
             bot_users.sendMessage(chatId, 
@@ -96,7 +96,7 @@ app.post(`/api/webhook/${TOKEN_users}`, async (req, res) => {
                 `- الاسم: ${user.first_name} ${user.last_name}\n` +
                 `- رقم الحساب: ${user.user_id || "غير متوفر"}\n` +
                 `- عدد الدعوات: ${user.invites_count} \n` +
-                `- رابط الدعوة: https://t.me/TradePandadzbot?start=${user.user_id}`
+                `- رابط الدعوة: https://t.me/TarekArouiBot?start=${user.user_id}`
             );
         }
     }
