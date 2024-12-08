@@ -200,10 +200,6 @@ async function checkAllSubscriptions(userId) {
 // });
 // بدء الخادم
 
-app.get('/test', (req, res) => {
-    res.send('Hello from the server!');
-});
-
 
 const PORT = 3000;
 
