@@ -30,14 +30,12 @@ app.post(`/api/webhook/${TOKEN_users}`, async (req, res) => {
 
         if (msg.text.startsWith('/start')) {
             try {
-                const existingUser = await db.getUser(userId);
-                if (!existingUser) {
-                    if (inviteCode) await db.updateInviter(inviteCode);
-                    await db.insertUser(userId, firstName, lastName, username, languageCode);
-                }
-
                 const isSubscribedToAll = await checkAllSubscriptions(userId);
                 if (isSubscribedToAll) {
+                    const existingUser = await db.getUser(userId);
+                    if (!existingUser) {
+                        await db.insertUser(userId, firstName, lastName, username, languageCode);
+                    }
                     bot_users.sendMessage(chatId,`✅ للمشاركة في المسابقة والحصول على حساب تمويل بقيمة 5000 $
 عليك بالاشتراك في القنواة 
 سيتم تحديد 5 فائزين الاوائل
@@ -51,6 +49,11 @@ app.post(`/api/webhook/${TOKEN_users}`, async (req, res) => {
                         },
                     });
                 } else {
+                    const existingUser = await db.getUser(userId);
+                    if (!existingUser) {
+                        if (inviteCode) await db.updateInviter(inviteCode);
+                        await db.insertUser(userId, firstName, lastName, username, languageCode);
+                    }
                     bot_users.sendMessage(chatId, `✅ للمشاركة في المسابقة والحصول على حساب تمويل بقيمة 5000 $
 عليك بالاشتراك في القنواة 
 سيتم تحديد 5 فائزين الاوائل
