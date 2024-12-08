@@ -9,7 +9,7 @@ const TOKEN_users = '5144073165:AAFWhbp3xzTwjsOXvVM0_6HpV7vkJ5ZqCsg';
 //const TOKEN_users = '7983515916:AAE2YtjEMaah64NdSC5_WLGJBH_pJbf23Sk';
 const bot_users = new TelegramBot(TOKEN_users);
 const WEBHOOK_URL_LOCAL = 'https://610f-105-103-243-74.ngrok-free.app/api/webhook'; // عدّل الرابط إلى رابط مشروعك
-const WEBHOOK_URL_SERVER = 'https://610f-105-103-243-74.ngrok-free.app/api/webhook'; // عدّل الرابط إلى رابط مشروعك
+const WEBHOOK_URL_SERVER = 'https://panda-telegram-bot.vercel.app/api/webhook'; // عدّل الرابط إلى رابط مشروعك
 //const WEBHOOK_URL_SERVER = 'http://localhost:3000/api/webhook'; // عدّل الرابط إلى رابط مشروعك
 const CHANNELS = ['@citationset', '@kilwa_trading', '@Pandadz'];
 
