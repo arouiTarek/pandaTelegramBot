@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const TelegramBot = require('node-telegram-bot-api');
-const db = require('./../db/database');
+const db = require('./db/database');
 const app = express();
 app.use(bodyParser.json());
 
