@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const TelegramBot = require('node-telegram-bot-api');
-const db = require('./db/database');
+const db = require('./../db/database');
 const app = express();
 app.use(bodyParser.json());
 
@@ -199,15 +199,8 @@ async function checkAllSubscriptions(userId) {
 //     }
 // });
 // بدء الخادم
+
 const PORT = 3000;
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-module.exports = (req, res) => {
-    if (req.method === 'POST') {
-        res.status(200).send('Webhook received!');
-    } else {
-        res.status(404).send('NOT_FOUND');
-    }
-};
-
-
+module.exports = app;

@@ -1,9 +1,10 @@
 {
   "name": "telegram-bot",
   "version": "1.0.0",
-  "main": "bot.js",
+  "main": "api/webhook.js",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node api/webhook.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +16,5 @@
     "express": "^4.21.1",
     "node-telegram-bot-api": "^0.66.0",
     "pg": "^8.13.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
   }
 }
